@@ -1,0 +1,60 @@
+<template>
+    <div class="slds-grid slds-grid_vertical">
+        <div class="slds-col slds-p-left_xx-small slds-p-right_xx-small">
+            <strong><lightning-formatted-rich-text class="product-title" value={product.title}></lightning-formatted-rich-text></strong>
+        </div>
+        <div class="slds-col slds-p-left_xx-small slds-p-right_xx-small slds-p-top_xxx-small">
+            <lightning-formatted-rich-text class="product-description" value={product.description}></lightning-formatted-rich-text>
+        </div>
+        <div class="slds-col slds-p-top_x-small">
+            <lightning-carousel disable-auto-scroll>
+                <template for:each={productImageLinks} for:item="imageLink" for:index="index">
+                    <lightning-carousel-image
+                        key={imageLink}
+                        src={imageLink}
+                        alternative-text=""
+                        href="">
+                    </lightning-carousel-image>
+                </template>
+            </lightning-carousel>
+        </div>
+        <div class="slds-col slds-p-left_xx-small slds-p-right_xx-small">
+            <ul class="slds-list_dotted">
+                <template for:each={product.features} for:item="feature" for:index="index">
+                    <li key={feature}><lightning-formatted-rich-text class="product-feature" value={feature}></lightning-formatted-rich-text></li>
+                </template>
+            </ul>
+        </div>
+        <div class="slds-col slds-p-left_xx-small slds-p-right_xx-small slds-p-top_x-small">
+            <strong><lightning-formatted-rich-text class="product-price" value={product.price}></lightning-formatted-rich-text></strong>
+        </div>
+        <div class="slds-col slds-p-left_xx-small slds-p-right_xx-small slds-p-top_x-small slds-c-button-color-black">
+            <lightning-button variant="brand" class="add-to-cart" name={product.title} onclick={handleAddToCart} label="Add to Cart" stretch></lightning-button>
+        </div>
+        <!--
+        <div class="slds-col">
+            <span class="color-label">Color <b>{product.selectedColor}</b></span>
+            <div class="color-swatches">
+                <template for:each={product.variations.Color} for:item="color" for:index="colorIndex">
+                    <div key={color} class="color-swatch" data-color={color} onclick={handleColorSelect}>
+                        <template if:true={color.selected}>
+                            <span class="color-swatch-selected"></span>
+                        </template>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <div class="slds-col">
+            <span class="size-label">Size <b>{product.selectedSize}</b></span>
+            <div class="size-swatches">
+                <template for:each={product.variations.Size} for:item="size" for:index="sizeIndex">
+                    <div key={size} class="size-swatch" data-size={size} onclick={handleSizeSelect}>
+                        <template if:true={size.selected}>
+                            <span class="size-swatch-selected"></span>
+                        </template>
+                    </div>
+                </template>
+            </div>
+        </div>-->
+    </div>
+</template>
