@@ -34,56 +34,6 @@ export default class CommerceProductDetails extends LightningElement {
         }`;
         this.template.querySelector('lightning-carousel').appendChild(style);
     }
-    
-//    @track selectedColorIndex = 0;
-
-    // connectedCallback() {
-    //     // Ensure product.colors and selectedColorName are set up
-    //     if (!this.product.colors) {
-    //         this.product.colors = [
-    //             { name: 'Brown', selected: true },
-    //             { name: 'Tan', selected: false }
-    //         ];
-    //     }
-    //     if (!this.product.selectedColorName) {
-    //         this.product.selectedColorName = this.product.colors[0].name;
-    //     }
-    //     this.updateColorSelection();
-    //     console.log('productDetails', this.product);
-    // }
-
-    // handleColorSelect(event) {
-    //     const colorName = event.currentTarget.dataset.color;
-    //     this.product.colors.forEach(color => {
-    //         color.selected = (color.name === colorName);
-    //     });
-    //     this.product.selectedColorName = colorName;
-    //     this.updateColorSelection();
-    //     this.forceUpdate();
-    // }
-
-    // updateColorSelection() {
-    //     // Ensure only one color is selected
-    //     let found = false;
-    //     this.product.colors.forEach((color, idx) => {
-    //         if (color.selected && !found) {
-    //             this.selectedColorIndex = idx;
-    //             found = true;
-    //         } else {
-    //             color.selected = false;
-    //         }
-    //     });
-    //     if (!found && this.product.colors.length > 0) {
-    //         this.product.colors[0].selected = true;
-    //         this.selectedColorIndex = 0;
-    //         this.product.selectedColorName = this.product.colors[0].name;
-    //     }
-    // }
-
-    // forceUpdate() {
-    //     // Workaround to trigger reactivity
-    //     this.product = { ...this.product };
-    // }
 
     handleAddToCart() {
         const product = this.product.title;

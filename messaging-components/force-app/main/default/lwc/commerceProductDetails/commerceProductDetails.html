@@ -31,30 +31,5 @@
         <div class="slds-col slds-p-left_xx-small slds-p-right_xx-small slds-p-top_x-small slds-c-button-color-black">
             <lightning-button variant="brand" class="add-to-cart" name={product.title} onclick={handleAddToCart} label="Add to Cart" stretch></lightning-button>
         </div>
-        <!--
-        <div class="slds-col">
-            <span class="color-label">Color <b>{product.selectedColor}</b></span>
-            <div class="color-swatches">
-                <template for:each={product.variations.Color} for:item="color" for:index="colorIndex">
-                    <div key={color} class="color-swatch" data-color={color} onclick={handleColorSelect}>
-                        <template if:true={color.selected}>
-                            <span class="color-swatch-selected"></span>
-                        </template>
-                    </div>
-                </template>
-            </div>
-        </div>
-        <div class="slds-col">
-            <span class="size-label">Size <b>{product.selectedSize}</b></span>
-            <div class="size-swatches">
-                <template for:each={product.variations.Size} for:item="size" for:index="sizeIndex">
-                    <div key={size} class="size-swatch" data-size={size} onclick={handleSizeSelect}>
-                        <template if:true={size.selected}>
-                            <span class="size-swatch-selected"></span>
-                        </template>
-                    </div>
-                </template>
-            </div>
-        </div>-->
     </div>
 </template>
